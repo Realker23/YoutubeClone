@@ -1,21 +1,22 @@
 import React from "react";
 import Sidebar from "./Sidebar";
-import MainContainer from "./MainContainer";
-import {useSelector} from "react-redux";
+// import MainContainer from "./MainContainer";
+import {Outlet} from "react-router-dom";
+// import {useSelector} from "react-redux";
 
 const Body = () => {
-  const toggle = useSelector((store) => {
-    return store.menuToggle.isMenuOpen;
-  });
+  // const toggle = useSelector((store) => {
+  //   return store.menuToggle.isMenuOpen;
+  // });
 
-  console.log(toggle);
+  // // console.log(toggle);
 
   return (
-    <div className="text-center">
-      <div>{toggle.toString()}</div>
-      <div className="flex ">
+    <div>
+      {/* <div>{toggle.toString()}</div> */}
+      <div className="flex h-full bg-black">
         <Sidebar />
-        <MainContainer />
+        <Outlet />
       </div>
     </div>
   );
